@@ -38,7 +38,11 @@ module.exports = sequelize => {
   const options = {
     tableName: "planes_de_estudio",
     comment: "",
-    indexes: []
+    indexes: [],
+    timestamps: false,
+    underscored: true,
+    freezeTableName: true,
+    schema: "public",
   };
   const PlanesDeEstudioModel = sequelize.define("planes_de_estudio_model", attributes, options);
   return PlanesDeEstudioModel;

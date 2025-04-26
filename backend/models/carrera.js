@@ -1,7 +1,5 @@
-const {
-  DataTypes
-} = require('sequelize');
-module.exports = sequelize => {
+const { DataTypes } = require("sequelize");
+module.exports = (sequelize) => {
   const attributes = {
     id_carrera: {
       type: DataTypes.CHAR(30),
@@ -10,7 +8,7 @@ module.exports = sequelize => {
       comment: null,
       primaryKey: true,
       field: "id_carrera",
-      autoIncrement: false
+      autoIncrement: false,
     },
     id_universidad: {
       type: DataTypes.CHAR(30),
@@ -22,8 +20,8 @@ module.exports = sequelize => {
       autoIncrement: false,
       references: {
         key: "id_universidad",
-        model: "universidad_model"
-      }
+        model: "universidad_model",
+      },
     },
     nombre: {
       type: DataTypes.CHAR(255),
@@ -32,7 +30,7 @@ module.exports = sequelize => {
       comment: null,
       primaryKey: false,
       field: "nombre",
-      autoIncrement: false
+      autoIncrement: false,
     },
     duracion: {
       type: DataTypes.INTEGER,
@@ -41,7 +39,7 @@ module.exports = sequelize => {
       comment: null,
       primaryKey: false,
       field: "duracion",
-      autoIncrement: false
+      autoIncrement: false,
     },
     tipo_titulo: {
       type: DataTypes.CHAR(100),
@@ -50,13 +48,17 @@ module.exports = sequelize => {
       comment: null,
       primaryKey: false,
       field: "tipo_titulo",
-      autoIncrement: false
-    }
+      autoIncrement: false,
+    },
   };
   const options = {
     tableName: "carrera",
     comment: "",
-    indexes: []
+    indexes: [],
+    timestamps: false,
+    underscored: true,
+    freezeTableName: true,
+    schema: "public",
   };
   const CarreraModel = sequelize.define("carrera_model", attributes, options);
   return CarreraModel;

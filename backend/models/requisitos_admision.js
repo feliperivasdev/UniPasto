@@ -47,7 +47,11 @@ module.exports = sequelize => {
   const options = {
     tableName: "requisitos_admision",
     comment: "",
-    indexes: []
+    indexes: [],
+    timestamps: false,
+    underscored: true,
+    freezeTableName: true,
+    schema: "public",
   };
   const RequisitosAdmisionModel = sequelize.define("requisitos_admision_model", attributes, options);
   return RequisitosAdmisionModel;

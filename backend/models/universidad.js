@@ -61,7 +61,11 @@ module.exports = sequelize => {
   const options = {
     tableName: "universidad",
     comment: "",
-    indexes: []
+    indexes: [],
+    timestamps: false,
+    underscored: true,
+    freezeTableName: true,
+    schema: "public",
   };
   const UniversidadModel = sequelize.define("universidad_model", attributes, options);
   return UniversidadModel;

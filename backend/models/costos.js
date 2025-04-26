@@ -47,7 +47,11 @@ module.exports = sequelize => {
   const options = {
     tableName: "costos",
     comment: "",
-    indexes: []
+    indexes: [],
+    timestamps: false,
+    underscored: true,
+    freezeTableName: true,
+    schema: "public",
   };
   const CostosModel = sequelize.define("costos_model", attributes, options);
   return CostosModel;
