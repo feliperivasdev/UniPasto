@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universidades Privadas</title>
+    <base href="/">
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -50,10 +51,10 @@
     </header>
     <nav>
         <ul>
-            <li><a href="Inicio.html">Inicio</a></li>
-            <li><a href="UniPrivadas.html">Universidades Privadas</a></li>
-            <li><a href="UniPublicas.html">Universidades Públicas</a></li>
-            <li><a href="#">Zona de Interacción</a></li>
+            <li><a href=" ">Inicio</a></li>
+            <li><a href="universidades_privadas">Universidades Privadas</a></li>
+            <li><a href="universidades_publicas">Universidades Públicas</a></li>
+            <li><a href="comparador">Zona de Interacción</a></li>
         </ul>
     </nav>
     <div class="content">
@@ -62,34 +63,33 @@
         <div class="universidades-container" id="informacion-universidad"></div>
     </div>
     
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const universidades = [
-                { nombre: "Universidad CESMAG", imagen: "imagenes/logoCesmag.png", descripcion: "Información sobre la Universidad Privada 1.", url: "UniCesmag.html" },
-                { nombre: "Universidad Mariana", imagen: "imagenes/MARIANA.png", descripcion: "Información sobre la Universidad Privada 2.", url: "UniMariana.html" },
-                { nombre: "Universidad San Martin", imagen: "imagenes/Logosanmartin.png", descripcion: "Información sobre la Universidad Privada 3.", url: "UniSanMartin.html" },
-                { nombre: "Universidad Cooperativa", imagen: "imagenes/CopeLogo.png", descripcion: "Información sobre la Universidad Privada 4.", url: "UniCoope.html" },
-                { nombre: "UNAD", imagen: "imagenes/Logo_unad_color.png", descripcion: "Información sobre la Universidad Privada 5.", url: "UniUnad.html" }
-                
-            ];
-
-            const container = document.getElementById("informacion-universidad");
-            universidades.forEach(uni => {
-                const modulo = document.createElement("div");
-                modulo.classList.add("universidad-modulo");
-                modulo.innerHTML = `
-                    <img src="${uni.imagen}" alt="${uni.nombre}">
-                    <h2>${uni.nombre}</h2>
-                    <p>${uni.descripcion}</p>
-                `;
-                modulo.addEventListener("click", function() {
-                    window.location.href = uni.url;
-                });
-                container.appendChild(modulo);
-            });
-        });
-    </script>
-    
+  <div class="universidades-container" id="informacion-universidad">
+    <div class="universidad-modulo">
+        <img src="Imagenes/LogoCesmag.png" alt="Universidad 1 Logo">
+        <h3>Universidad Privada 1</h3>
+        <p>Conoce más sobre nuestra excelencia académica y programas innovadores.</p>
+    </div>
+    <div class="universidad-modulo">
+        <img src="imagenes/universidad2-logo.jpg" alt="Universidad 2 Logo">
+        <h3>Universidad Privada 2</h3>
+        <p>Descubre nuestras instalaciones modernas y oportunidades de investigación.</p>
+    </div>
+    <div class="universidad-modulo">
+        <img src="imagenes/universidad3-logo.jpg" alt="Universidad 3 Logo">
+        <h3>Universidad Privada 3</h3>
+        <p>Explora nuestras carreras y programas de intercambio internacional.</p>
+    </div>
+    <div class="universidad-modulo">
+        <img src="imagenes/universidad4-logo.jpg" alt="Universidad 4 Logo">
+        <h3>Universidad Privada 4</h3>
+        <p>Únete a una comunidad académica vibrante y diversa.</p>
+    </div>
+    <div class="universidad-modulo">
+        <img src="imagenes/universidad5-logo.jpg" alt="Universidad 5 Logo">
+        <h3>Universidad Privada 5</h3>
+        <p>Forma parte de una institución con tradición y excelencia educativa.</p>
+    </div>
+</div>
     <footer>
         <div class="container">
             <div class="social-media">
