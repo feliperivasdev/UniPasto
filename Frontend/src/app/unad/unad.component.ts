@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-unad',
-  imports: [],
+  standalone: false,
   templateUrl: './unad.component.html',
-  styleUrl: './unad.component.scss'
+  styleUrl: './unad.component.css'
 })
-export class UNADComponent {
+export class UnadComponent {
 
 }

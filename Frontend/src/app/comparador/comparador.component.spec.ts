@@ -8,7 +8,7 @@ describe('ComparadorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ComparadorComponent]
+      declarations: [ComparadorComponent]
     })
     .compileComponents();
 

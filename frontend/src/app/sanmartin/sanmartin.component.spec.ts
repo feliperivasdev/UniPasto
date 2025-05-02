@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SanMartinComponent } from './san-martin.component';
+import { SanmartinComponent } from './sanmartin.component';
 
-describe('SanMartinComponent', () => {
-  let component: SanMartinComponent;
-  let fixture: ComponentFixture<SanMartinComponent>;
+describe('SanmartinComponent', () => {
+  let component: SanmartinComponent;
+  let fixture: ComponentFixture<SanmartinComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SanMartinComponent]
+      declarations: [SanmartinComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SanMartinComponent);
+    fixture = TestBed.createComponent(SanmartinComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

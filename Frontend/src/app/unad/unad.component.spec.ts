@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UNADComponent } from './unad.component';
+import { UnadComponent } from './unad.component';
 
-describe('UNADComponent', () => {
-  let component: UNADComponent;
-  let fixture: ComponentFixture<UNADComponent>;
+describe('UnadComponent', () => {
+  let component: UnadComponent;
+  let fixture: ComponentFixture<UnadComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UNADComponent]
+      declarations: [UnadComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UNADComponent);
+    fixture = TestBed.createComponent(UnadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

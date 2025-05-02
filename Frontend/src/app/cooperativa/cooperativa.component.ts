@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cooperativa',
-  imports: [],
+  standalone: false,
   templateUrl: './cooperativa.component.html',
-  styleUrl: './cooperativa.component.scss'
+  styleUrl: './cooperativa.component.css'
 })
 export class CooperativaComponent {
 

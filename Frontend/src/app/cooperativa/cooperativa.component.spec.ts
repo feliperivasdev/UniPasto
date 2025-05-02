@@ -8,7 +8,7 @@ describe('CooperativaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CooperativaComponent]
+      declarations: [CooperativaComponent]
     })
     .compileComponents();
 

@@ -8,7 +8,7 @@ describe('SenaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SenaComponent]
+      declarations: [SenaComponent]
     })
     .compileComponents();
 

@@ -8,7 +8,7 @@ describe('UdenarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UdenarComponent]
+      declarations: [UdenarComponent]
     })
     .compileComponents();
 

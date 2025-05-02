@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sena',
-  imports: [],
+  standalone: false,
   templateUrl: './sena.component.html',
-  styleUrl: './sena.component.scss'
+  styleUrl: './sena.component.css'
 })
 export class SenaComponent {
 

@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-udenar',
-  imports: [],
+  standalone: false,
   templateUrl: './udenar.component.html',
-  styleUrl: './udenar.component.scss'
+  styleUrl: './udenar.component.css'
 })
 export class UdenarComponent {
 

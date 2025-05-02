@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CesmagComponent } from './cesmag.component';
+import { UcesmagComponent } from './ucesmag.component';
 
-describe('CesmagComponent', () => {
-  let component: CesmagComponent;
-  let fixture: ComponentFixture<CesmagComponent>;
+describe('UcesmagComponent', () => {
+  let component: UcesmagComponent;
+  let fixture: ComponentFixture<UcesmagComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CesmagComponent]
+      declarations: [UcesmagComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CesmagComponent);
+    fixture = TestBed.createComponent(UcesmagComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
