@@ -14,6 +14,7 @@ import { SanmartinComponent } from './sanmartin/sanmartin.component';
 import { CooperativaComponent } from './cooperativa/cooperativa.component';
 import { UnadComponent } from './unad/unad.component';
 import { SenaComponent } from './sena/sena.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SenaComponent } from './sena/sena.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(withEventReplay())
