@@ -6,15 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { UniversidadesPublicasComponent } from './universidades-publicas/universidades-publicas.component';
 import { UniversidadesPrivadasComponent } from './universidades-privadas/universidades-privadas.component';
-import { ComparadorComponent } from './comparador/comparador.component';
-import { UdenarComponent } from './udenar/udenar.component';
-import { UcesmagComponent } from './ucesmag/ucesmag.component';
-import { UnimarComponent } from './unimar/unimar.component';
-import { SanmartinComponent } from './sanmartin/sanmartin.component';
-import { CooperativaComponent } from './cooperativa/cooperativa.component';
-import { UnadComponent } from './unad/unad.component';
-import { SenaComponent } from './sena/sena.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UnadComponent } from './unad/unad.component';
+import { UdenarComponent } from './udenar/udenar.component';
+import { SanmartinComponent } from './sanmartin/sanmartin.component';
+import { SenaComponent } from './sena/sena.component';
+import { CooperativaComponent } from './cooperativa/cooperativa.component';
+import { ComparadorComponent } from './comparador/comparador.component';
+import { UnimarComponent } from './unimar/unimar.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,19 +22,21 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     UniversidadesPublicasComponent,
     UniversidadesPrivadasComponent,
-    ComparadorComponent,
-    UdenarComponent,
-    UcesmagComponent,
-    UnimarComponent,
-    SanmartinComponent,
-    CooperativaComponent,
     UnadComponent,
-    SenaComponent
+    UdenarComponent,
+    SanmartinComponent,
+    SenaComponent,
+    CooperativaComponent,
+    ComparadorComponent,
+    
+
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
   ],
   providers: [
     provideClientHydration(withEventReplay())

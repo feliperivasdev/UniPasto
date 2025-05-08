@@ -37,7 +37,7 @@ export class AllservicesService {
   }
 
   getUniversidadById(id: string) {
-    return this.http.get(`${this.apiUrl}/universidades/${id}`);
+    return this.http.get(`${this.apiUrl}/universidad/${id}`);
   }
 
   // Requisitos de Admisión Services

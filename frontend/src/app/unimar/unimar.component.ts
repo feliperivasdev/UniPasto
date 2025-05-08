@@ -1,31 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AllservicesService } from '../allservices.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-unimar',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './unimar.component.html',
   styleUrl: './unimar.component.css'
 })
-export class UnimarComponent {
-  universidad: any; // No interface for now, using 'any'
-  universidadId: string = ''; // Store the universidad ID
+export class UnimarComponent implements OnInit {
+  universidad: any;
+  universidadId: string = 'umariana'; // ID de la universidad a cargar
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private allServices: AllservicesService
+  ) {}
 
   ngOnInit(): void {
-    // Get the ID from the route
-    this.universidadId = 'unimar'; // Assuming your route parameter is named 'id'
+    // Obtener ID desde la URL
+    
     this.loadUniversidad();
   }
 
   loadUniversidad(): void {
     if (this.universidadId) {
-      // Simulate fetching data
-      this.universidad = {
-        id: this.universidadId,
-        name: 'Universidad del Mar',
-        description: 'Description of Universidad del Mar'
-      };
+      this.allServices.getUniversidadById(this.universidadId).subscribe({
+        next: (data) => {
+          this.universidad = data;
+        },
+        error: (err) => {
+          console.error('Error al cargar la universidad:', err);
+        }
+      });
     }
   }
 }

@@ -9,7 +9,7 @@ module.exports = {
     },
     getById(req, res) {
         const id_universidad = req.params.id_universidad;
-        return Universidad.findByPk(id_universidad)
+        return universidad.findByPk(id_universidad)
             .then(universidad => {
                 if (!universidad) {
                     return res.status(404).send({ message: 'Universidad not found' });

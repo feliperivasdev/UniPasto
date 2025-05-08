@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    apiUrl: 'http://localhost:3000/',
+    apiUrl: 'http://localhost:3000',
     authUrl: 'http://localhost:3000/auth',
     socketUrl: 'ws://localhost:3000/socket',
     // Add other environment variables as needed

@@ -13,23 +13,24 @@ import { UdenarComponent } from './udenar/udenar.component';
 import { SenaComponent } from './sena/sena.component';
 
 const routes: Routes = [
-  {path:'', component: HomeComponent},
-  {path:'universidades/publicas', component:UniversidadesPublicasComponent},
-  {path:'universidades/privadas', component:UniversidadesPrivadasComponent},
-  {path:'comparar',component:ComparadorComponent},
-  {path:'cesmag',  component: UcesmagComponent},
-  {path:'unimar', component: UnimarComponent},
-  {path:'unad', component: UnadComponent},
-  {path:'sanmartin', component: SanmartinComponent},
-  {path:'cooperativa', component: CooperativaComponent},
-  {path:'udenar', component: UdenarComponent},
-  {path:'sena', component: SenaComponent},
+  { path: '', component: HomeComponent },
+  { path: 'universidades/publicas', component: UniversidadesPublicasComponent },
+  { path: 'universidades/privadas', component: UniversidadesPrivadasComponent },
+  { path: 'comparar', component: ComparadorComponent },
+  { path: 'cesmag', component: UcesmagComponent },
+  { path: 'unimar', component: UnimarComponent },
+  { path: 'unad', component: UnadComponent },
+  { path: 'sanmartin', component: SanmartinComponent },
+  { path: 'cooperativa', component: CooperativaComponent },
+  { path: 'udenar', component: UdenarComponent },
+  { path: 'sena', component: SenaComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,)
+  ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { 
+export class AppRoutingModule {
 
 }
