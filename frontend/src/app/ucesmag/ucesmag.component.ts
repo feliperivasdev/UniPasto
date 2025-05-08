@@ -1,40 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AllservicesService } from '../allservices.service';
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-ucesmag',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './ucesmag.component.html',
   styleUrl: './ucesmag.component.css'
 })
-export class UcesmagComponent {
-  universidad: any; // No interface for now, using 'any'
-  universidadId: string = ''; // Store the universidad ID
+export class UcesmagComponent implements OnInit {
+  universidad: any;
+  universidadId: string = 'unicesmag'; // ID de la universidad a cargar
 
   constructor(
-    private allServices: AllservicesService,
-    private route: ActivatedRoute // Inject ActivatedRoute
-  ) { }
+    private route: ActivatedRoute,
+    private allServices: AllservicesService
+  ) {}
 
   ngOnInit(): void {
-    // Get the ID from the route
-    this.route.params.subscribe(params => {
-      this.universidadId = params['id']; // Assuming your route parameter is named 'id'
-      this.loadUniversidad();
-    });
+    // Obtener ID desde la URL
+    
+    this.loadUniversidad();
   }
 
   loadUniversidad(): void {
     if (this.universidadId) {
-      this.allServices.getUniversidadById(this.universidadId).subscribe(
-        data => {
+      this.allServices.getUniversidadById(this.universidadId).subscribe({
+        next: (data) => {
           this.universidad = data;
         },
-        error => {
-          console.error('Error fetching universidad:', error);
+        error: (err) => {
+          console.error('Error al cargar la universidad:', err);
         }
-      );
+      });
     }
   }
 }
