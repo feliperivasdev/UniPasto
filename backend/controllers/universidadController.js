@@ -1,4 +1,6 @@
 const universidad = require('../models').universidad_model;
+const carrera = require('../models').carrera_model;
+const costos = require('../models').costos_model;
 
 module.exports = {
     list(req, res) {

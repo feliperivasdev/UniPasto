@@ -1,4 +1,7 @@
 const carrera = require('../models').carrera_model;
+const universidad = require('../models').universidad_model;
+const costos = require('../models').costos_model;
+const planes_de_estudio = require('../models').planes_de_estudio_model;
 
 module.exports = {
     list(req, res) {
@@ -7,6 +10,7 @@ module.exports = {
             .then((carrera) => res.status(200).send(carrera))
             .catch((error) => { res.status(400).send(error); });
     },
+
     // Get a single carrera by ID
     getById(req, res) {
         const id_carrera = req.params.id_carrera; // Assuming you're passing ID in the URL
@@ -66,5 +70,24 @@ module.exports = {
                     .catch(error => res.status(400).send(error));
             })
             .catch(error => res.status(400).send(error));
+    },
+    getCarrerasByUniversidad(req, res) {
+        const id_universidad = req.params.id_universidad;
+    
+        return carrera.findAll({
+            where: { id_universidad },
+            include: [costos]  // Incluye modelos relacionados
+        })
+        .then(carreras => {
+            if (!carreras || carreras.length === 0) {
+                return res.status(404).send({ message: 'No se encontraron carreras para esta universidad.' });
+            }
+            return res.status(200).send(carreras);
+        })
+        .catch(error => {
+            console.error('Error al obtener carreras por universidad:', error);
+            return res.status(400).send(error);
+        });
     }
+    
 };
