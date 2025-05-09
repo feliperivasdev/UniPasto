@@ -1,4 +1,6 @@
 const costos = require('../models').costos_model;
+const universidad = require('../models').universidad_model;
+const carrera = require('../models').carrera_model;
 
 
 module.exports = {
@@ -7,6 +9,23 @@ module.exports = {
             .findAll({})
             .then((costos) => res.status(200).send(costos))
             .catch((error) => { res.status(400).send(error); });
+    },
+    listWithCost: async (req, res) => {
+        try {
+            const data = await costos.findAll({
+                include: [{
+                    model: carrera,
+                    attributes: ['nombre', 'id_universidad'],
+                    include: [{
+                        model: universidad,
+                        attributes: ['nombre']
+                    }]
+                }]
+            });
+            res.status(200).json(data);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
     },
     getById(req, res) {
         const id_costo = req.params.id_costo;
