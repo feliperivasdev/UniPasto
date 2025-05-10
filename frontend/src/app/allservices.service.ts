@@ -106,6 +106,12 @@ export class AllservicesService {
   // Costos Services
   getCostos() {
     return this.http.get(`${this.apiUrl}/costos`);
+
+
+  }
+
+  getDetalle(){
+    return this.http.get(`${this.apiUrl}/costos/detalle`);
   }
 
   getCostoById(id: string) {

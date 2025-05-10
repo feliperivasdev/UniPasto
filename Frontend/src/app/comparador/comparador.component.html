@@ -1,1 +1,81 @@
-<p>comparador works!</p>
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card shadow-sm mb-4">
+          <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">Comparador de Carreras</h2>
+          </div>
+          <div class="card-body">
+            <div class="form-group mb-4">
+              <label for="selectCarrera" class="form-label">Selecciona una carrera:</label>
+              <select id="selectCarrera" class="form-select" [(ngModel)]="carreraSeleccionada">
+                <option value="" disabled selected>-- Selecciona una carrera --</option>
+                <option *ngFor="let carrera of carrerasNombres" [value]="carrera">{{ carrera }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row" *ngIf="carreraSeleccionada">
+      <div class="col-12 mb-3">
+        <div class="card shadow-sm">
+          <div class="card-header bg-light">
+            <h3 class="mb-0 text-primary">{{ carreraSeleccionada }}</h3>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th>Universidad</th>
+                    <th>Matrícula</th>
+                    <th>Otros Costos</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let detalle of carrerasData[carreraSeleccionada]">
+                    <td class="fw-bold">{{ detalle.universidad }}</td>
+                    <td>{{ detalle.matricula | currency:'COP':'symbol' }}</td>
+                    <td>{{ detalle.otros_costos | currency:'COP':'symbol' }}</td>
+                    <td class="fw-bold text-primary">{{ detalle.matricula + detalle.otros_costos | currency:'COP':'symbol' }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Tarjetas con estilo alternativo -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" *ngIf="carreraSeleccionada">
+      <div class="col" *ngFor="let detalle of carrerasData[carreraSeleccionada]">
+        <div class="card h-100 shadow-sm hover-card">
+          <div class="card-header bg-light py-3">
+            <h5 class="card-title mb-0 text-center">{{ detalle.universidad }}</h5>
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-muted">Matrícula</span>
+              <span class="fw-bold">{{ detalle.matricula | currency:'COP':'symbol' }}</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-muted">Otros Costos</span>
+              <span class="fw-bold">{{ detalle.otros_costos | currency:'COP':'symbol' }}</span>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="fw-bold">Total</span>
+              <span class="fw-bold fs-5 text-primary">{{ detalle.matricula + detalle.otros_costos | currency:'COP':'symbol' }}</span>
+            </div>
+          </div>
+          <div class="card-footer bg-white border-top-0">
+            <button class="btn btn-outline-primary w-100">Ver Detalles</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -15,6 +15,7 @@ import { CooperativaComponent } from './cooperativa/cooperativa.component';
 import { ComparadorComponent } from './comparador/comparador.component';
 import { UnimarComponent } from './unimar/unimar.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration(withEventReplay())
