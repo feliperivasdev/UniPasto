@@ -1,9 +1,71 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidades Publicas</title>
+    <base href="/">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .universidades-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .universidad-modulo {
+            width: 250px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: transform 0.3s ease, border 0.3s ease;
+        }
+        .universidad-modulo:hover {
+            transform: scale(1.05);
+            border: 3px solid #007bff;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+        }
+        .universidad-modulo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="Imagenes/unipastoLogo.jpeg" alt="UNIPASTO Logo">
+            </div>
+            <h1>UNIPASTO</h1>
+            <p>Sigue tu pasión y alcanza tus metas con alegría!</p>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href=" ">Inicio</a></li>
+            <li><a href="universidades/privadas">Universidades Privadas</a></li>
+            <li><a href="universidades/publicas">Universidades Públicas</a></li>
+            <li><a href="comparar">Comparador</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Comparador</h1>
+        <p>Compara segun la carrera que elijas de la lista :</p>
+        <div class="universidades-container" id="informacion-universidad"></div>
+    </div>
 <div class="container mt-4">
     <div class="row">
       <div class="col-12">
         <div class="card shadow-sm mb-4">
           <div class="card-header bg-primary text-white">
-            <h2 class="mb-0">Comparador de Carreras</h2>
+      
           </div>
           <div class="card-body">
             <div class="form-group mb-4">
