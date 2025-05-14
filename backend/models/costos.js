@@ -33,15 +33,7 @@ module.exports = sequelize => {
             field: "matricula",
             autoIncrement: false
         },
-        otros_costos: {
-            type: DataTypes.DOUBLE,
-            allowNull: true,
-            defaultValue: null,
-            comment: null,
-            primaryKey: false,
-            field: "otros_costos",
-            autoIncrement: false
-        }
+        
     };
     const options = {
         tableName: "costos",
