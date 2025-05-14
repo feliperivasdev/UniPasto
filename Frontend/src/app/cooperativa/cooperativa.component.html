@@ -1,23 +1,44 @@
-<!-- Botón de regresar -->
-<div style="text-align: center; margin-top: 20px;">
-    <div *ngIf="universidad; else loading">
-        <h2>Detalles de la Universidad</h2>
-        <p><strong>ID:</strong> {{ universidad.id_universidad }}</p>
-        <p><strong>Nombre:</strong> {{ universidad.nombre }}</p>
-        <p><strong>Tipo:</strong> {{ universidad.tipo }}</p>
-        <p><strong>Ubicación:</strong> {{ universidad.ubicacion }}</p>
-        <p><strong>Teléfono:</strong> {{ universidad.telefono }}</p>
-        <p><strong>Sitio Web:</strong> <a href="{{ universidad.sitio_web }}" target="_blank">{{ universidad.sitio_web
-                }}</a></p>
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="Imagenes/unipastoLogo.jpeg" alt="UNIPASTO Logo">
+        </div>
+        <h1>UNIPASTO</h1>
+        <p>Sigue tu pasión y alcanza tus metas con alegría!</p>
+    </div>
+</header>
+<nav>
+    <ul>
+        <li><a href=" ">Inicio</a></li>
+        <li><a href="/universidades/privadas">Universidades Privadas</a></li>
+        <li><a href="universidades/publicas">Universidades Públicas</a></li>
+        <li><a href="comparar">Comparador</a></li>
+    </ul>
+</nav>
+<div class="d-flex justify-content-center mt-4">
+    <div *ngIf="universidad; else loading" class="card shadow" style="max-width: 500px; width: 100%;">
+        <div class="card-header text-center bg-primary text-white">
+            <h4 class="mb-0">Detalles de la Universidad</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>Nombre:</strong> {{ universidad.nombre }}</p>
+            <p><strong>Tipo:</strong> {{ universidad.tipo }}</p>
+            <p><strong>Ubicación:</strong> {{ universidad.ubicacion }}</p>
+            <p><strong>Teléfono:</strong> {{ universidad.telefono }}</p>
+            <p><strong>Sitio Web:</strong>
+                <a [href]="universidad.sitio_web" target="_blank">{{ universidad.sitio_web }}</a>
+            </p>
+        </div>
+        <div class="card-footer text-center">
+            <button class="btn btn-primary" onclick="window.location.href='universidades/privadas'">
+                Regresar
+            </button>
+        </div>
     </div>
 
     <ng-template #loading>
-        <p>Cargando detalles...</p>
+        <div class="alert alert-info text-center" role="alert">
+            Cargando detalles...
+        </div>
     </ng-template>
-    <button onclick="window.location.href='universidades/privadas'"
-        style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
-        Regresar
-    </button>
-
-
 </div>
